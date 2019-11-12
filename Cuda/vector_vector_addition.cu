@@ -7,6 +7,7 @@ __global__ void sum(int*  input1,int*  input2, int *Out,int size)              /
 {
     int i = threadIdx.x + blockDim.x * blockIdx.x;
 	printf("\nThread id%d",threadIdx.x);
+	if(i<size)
     Out[i]= input1[i] + input2[i];
     __syncthreads();
 }
